@@ -1,0 +1,39 @@
+{
+  "agent_name": "Expense Assistant Agent",
+  "agent_id": "696f6413b50537828e0b1654",
+  "test_message": "What is the daily meal allowance for domestic travel?",
+  "expected_purpose": "expense_processor",
+  "timestamp": "2026-01-20T11:17:36.282128",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "expense_details": {
+        "vendor": "",
+        "date": "",
+        "amount": 0,
+        "currency": "",
+        "category": "",
+        "items": []
+      },
+      "policy_validation": {
+        "is_compliant": false,
+        "violations": [],
+        "warnings": [],
+        "approval_required": false
+      },
+      "answer": "The daily meal allowance for domestic travel is specified in the company\u2019s expense policy. Please refer to the domestic travel section of the policy for the exact daily meal allowance amount and any eligible limits or restrictions.",
+      "recommendations": [
+        "Ensure you submit itemized receipts for all claimed meals.",
+        "If your total meal expenses exceed the daily allowance, only the maximum allowed amount will be reimbursed.",
+        "Check for any exceptions or region-specific limits in the policy."
+      ]
+    },
+    "metadata": {
+      "agent_name": "Expense Assistant Agent",
+      "timestamp": "2024-06-15T20:50:14Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"expense_details\": {\n      \"vendor\": \"\",\n      \"date\": \"\",\n      \"amount\": 0,\n      \"currency\": \"\",\n      \"category\": \"\",\n      \"items\": []\n    },\n    \"policy_validation\": {\n      \"is_compliant\": false,\n      \"violations\": [],\n      \"warnings\": [],\n      \"approval_required\": false\n    },\n    \"answer\": \"The daily meal allowance for domestic travel is specified in the company\u2019s expense policy. Please refer to the domestic travel section of the policy for the exact daily meal allowance amount and any eligible limits or restrictions.\",\n    \"recommendations\": [\n      \"Ensure you submit itemized receipts for all claimed meals.\",\n      \"If your total meal expenses exceed the daily allowance, only the maximum allowed amount will be reimbursed.\",\n      \"Check for any exceptions or region-specific limits in the policy.\"\n    ]\n  },\n  \"metadata\": {\n    \"agent_name\": \"Expense Assistant Agent\",\n    \"timestamp\": \"2024-06-15T20:50:14Z\"\n  }\n}"
+}

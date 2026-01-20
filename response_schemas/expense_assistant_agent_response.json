@@ -1,0 +1,104 @@
+{
+  "agent_name": "Expense Assistant Agent",
+  "agent_id": "696f6413b50537828e0b1654",
+  "agent_purpose": "expense_processor",
+  "description": "Processes uploaded receipts to extract expense details, automatically categorizes expenses, validates against company policy, and answers employee questions about expense guidelines and reimbursement procedures",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "expense_details": {
+        "vendor": "string",
+        "date": "string",
+        "amount": "number",
+        "currency": "string",
+        "category": "string",
+        "items": [
+          "string"
+        ]
+      },
+      "policy_validation": {
+        "is_compliant": "boolean",
+        "violations": [
+          "any"
+        ],
+        "warnings": [
+          "any"
+        ],
+        "approval_required": "boolean"
+      },
+      "answer": "string",
+      "recommendations": [
+        "string"
+      ]
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "expense_details": {
+        "vendor": "ABC Cafe",
+        "date": "2024-05-20",
+        "amount": 32.5,
+        "currency": "USD",
+        "category": "Meals",
+        "items": [
+          "2x Lunch Combo",
+          "1x Coffee"
+        ]
+      },
+      "policy_validation": {
+        "is_compliant": true,
+        "violations": [],
+        "warnings": [],
+        "approval_required": false
+      },
+      "answer": "",
+      "recommendations": [
+        "Attach itemized receipt for meal expenses",
+        "Ensure expenses are submitted within 30 days of purchase"
+      ]
+    },
+    "metadata": {
+      "agent_name": "Expense Assistant Agent",
+      "timestamp": "2024-06-18T10:15:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-20T11:18:03.415540",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "expense_details": {
+        "vendor": "ABC Cafe",
+        "date": "2024-05-20",
+        "amount": 32.5,
+        "currency": "USD",
+        "category": "Meals",
+        "items": [
+          "2x Lunch Combo",
+          "1x Coffee"
+        ]
+      },
+      "policy_validation": {
+        "is_compliant": true,
+        "violations": [],
+        "warnings": [],
+        "approval_required": false
+      },
+      "answer": "",
+      "recommendations": [
+        "Attach itemized receipt for meal expenses",
+        "Ensure expenses are submitted within 30 days of purchase"
+      ]
+    },
+    "metadata": {
+      "agent_name": "Expense Assistant Agent",
+      "timestamp": "2024-06-18T10:15:00Z"
+    }
+  }
+}

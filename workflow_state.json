@@ -1,0 +1,64 @@
+{
+  "workflow_type": "single_agent",
+  "project_name": "ExpenseFlow",
+  "agents": [
+    {
+      "agent_id": "696f6413b50537828e0b1654",
+      "name": "Expense Assistant Agent",
+      "type": "single",
+      "description": "Processes uploaded receipts to extract expense details, automatically categorizes expenses, validates against company policy, and answers employee questions about expense guidelines and reimbursement procedures",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "top_p": 1,
+      "has_knowledge_base": true,
+      "rag_id": "696f640257f90ab8a46e8dd4",
+      "rag_name": "expensepoliciesru1x",
+      "trigger": "Submit Expense button, Chat input on Dashboard",
+      "status": "created"
+    }
+  ],
+  "knowledge_bases": [
+    {
+      "rag_id": "696f640257f90ab8a46e8dd4",
+      "name": "Expense Policies",
+      "collection_name": "expensepoliciesru1x",
+      "description": "Company expense policy guidelines and reimbursement procedures"
+    }
+  ],
+  "workflow_structure": {
+    "nodes": [
+      {
+        "id": "user_input",
+        "type": "Input",
+        "label": "User Input (Receipt/Question)",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "expense_assistant_agent",
+        "type": "Agent",
+        "label": "Expense Assistant Agent",
+        "nodeCategory": "agent",
+        "agent_id": "696f6413b50537828e0b1654"
+      },
+      {
+        "id": "response_output",
+        "type": "Output",
+        "label": "Expense Processing Result",
+        "nodeCategory": "end"
+      }
+    ],
+    "edges": [
+      {
+        "source": "user_input",
+        "target": "expense_assistant_agent"
+      },
+      {
+        "source": "expense_assistant_agent",
+        "target": "response_output"
+      }
+    ]
+  },
+  "created_at": "2026-01-20T00:00:00Z",
+  "last_updated": "2026-01-20T00:00:00Z"
+}
